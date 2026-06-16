@@ -1,19 +1,11 @@
-import { useEffect, useState } from 'react'
-import { type Page, readPageFromHash } from './pages'
+import { useSyncExternalStore } from 'react'
+import { readPageFromHash } from './pages'
 
-export function useHashPage(): Page {
-    const [page, setPage] = useState<Page>(readPageFromHash())
+function subscribeToHash(onStoreChange: () => void) {
+    window.addEventListener('hashchange', onStoreChange)
+    return () => window.removeEventListener('hashchange', onStoreChange)
+}
 
-    useEffect(() => {
-        const onHashChange = () => setPage(readPageFromHash())
-        window.addEventListener('hashchange', onHashChange)
-
-        if (!window.location.hash) {
-            window.location.hash = '/home'
-        }
-
-        return () => window.removeEventListener('hashchange', onHashChange)
-    }, [])
-
-    return page
+export function useHashPage() {
+    return useSyncExternalStore(subscribeToHash, readPageFromHash, () => 'home' as const)
 }

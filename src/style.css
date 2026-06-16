@@ -85,6 +85,15 @@ body {
   width: min(720px, 100%);
 }
 
+.portfolio-body--full {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.portfolio-body--full .content {
+  width: 100%;
+  min-width: 0;
+}
+
 .sidebar {
   display: flex;
   flex-direction: column;
@@ -125,8 +134,43 @@ body {
 
 .info-subtitle {
   margin: 0;
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   font-weight: 600;
+  letter-spacing: 0.03em;
+  opacity: 0.85;
+}
+
+.education-list {
+  margin: 6px 0 16px;
+  display: grid;
+  gap: 12px;
+}
+
+.education-entry {
+  display: grid;
+  gap: 2px;
+}
+
+.education-degree,
+.education-school,
+.education-period {
+  margin: 0;
+  font-size: 0.8rem;
+  line-height: 1.45;
+}
+
+.education-degree {
+  font-weight: 600;
+}
+
+.education-school {
+  font-weight: 400;
+}
+
+.education-period {
+  font-weight: 400;
+  opacity: 0.75;
+  font-size: 0.75rem;
 }
 
 .info-list {
@@ -199,6 +243,45 @@ body {
   font-style: normal;
 }
 
+.section-header {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.section-header .section-title {
+  margin: 0;
+}
+
+.section-more-btn {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--text);
+  font: inherit;
+  font-size: clamp(0.9rem, 1.7vw, 1rem);
+  font-weight: 400;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+a.section-more-btn {
+  display: inline;
+}
+
+.section-more-btn:hover {
+  opacity: 1;
+}
+
+.section-more-btn:focus-visible {
+  outline: 2px solid var(--line);
+  outline-offset: 2px;
+}
+
 .news-item {
   margin: 0 0 40px;
   font-size: clamp(0.95rem, 1.8vw, 1.05rem);
@@ -239,10 +322,100 @@ body {
   font-weight: 400;
 }
 
-.skill-entry {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45em;
+.song-table-wrap {
+  width: min(720px, 100%);
+  overflow-x: auto;
+}
+
+.song-table-wrap--full {
+  width: 100%;
+  max-width: 100%;
+}
+
+.song-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: clamp(0.9rem, 1.7vw, 1rem);
+  line-height: 1.5;
+}
+
+.song-table th,
+.song-table td {
+  padding: 10px 12px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--line);
+}
+
+.song-table th {
+  font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  opacity: 0.85;
+}
+
+.song-table-title {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.song-table-artist {
+  font-style: italic;
+  white-space: nowrap;
+}
+
+.song-table-note {
+  font-style: italic;
+  opacity: 0.9;
+  min-width: 12rem;
+}
+
+@media (max-width: 600px) {
+  .song-table-title,
+  .song-table-artist {
+    white-space: normal;
+  }
+}
+
+.experience {
+  margin-bottom: 32px;
+}
+
+.experience:last-child {
+  margin-bottom: 0;
+}
+
+.experience-header {
+  display: grid;
+  gap: 2px;
+}
+
+.experience-role {
+  margin: 0;
+  font-size: clamp(1rem, 2vw, 1.12rem);
+  font-weight: 600;
+}
+
+.experience-company {
+  margin: 0;
+  font-size: clamp(0.95rem, 1.8vw, 1.05rem);
+  font-weight: 400;
+}
+
+.experience-period {
+  margin: 0;
+  font-size: clamp(0.85rem, 1.6vw, 0.95rem);
+  font-weight: 400;
+  opacity: 0.8;
+}
+
+.experience-points {
+  margin: 8px 0 0;
+  padding-left: 1.2rem;
+  font-size: clamp(0.9rem, 1.7vw, 1rem);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.5;
 }
 
 .project {

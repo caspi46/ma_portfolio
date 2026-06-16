@@ -4,7 +4,7 @@ import SiteNav from './SiteNav'
 
 type PortfolioLayoutProps = {
     activePage: Page
-    variant?: 'sidebar' | 'single'
+    variant?: 'sidebar' | 'single' | 'full'
     sidebar?: ReactNode
     children: ReactNode
 }
@@ -16,7 +16,11 @@ function PortfolioLayout({
     children,
 }: PortfolioLayoutProps) {
     const bodyClass =
-        variant === 'single' ? 'portfolio-body portfolio-body--single' : 'portfolio-body'
+        variant === 'sidebar'
+            ? 'portfolio-body'
+            : variant === 'full'
+              ? 'portfolio-body portfolio-body--full'
+              : 'portfolio-body portfolio-body--single'
 
     return (
         <main className="portfolio-page">

@@ -8,14 +8,14 @@ function isNavItemActive(itemId: (typeof NAV_ITEMS)[number]['id'], activePage: P
     if (activePage === 'post' && itemId === 'blog') {
         return true
     }
+    if (activePage === 'songs' && itemId === 'hobby') {
+        return true
+    }
     return itemId === activePage
 }
 
 function formatNavLabel(item: (typeof NAV_ITEMS)[number], active: boolean): string {
-    if (active && (item.id === 'blog' || item.id === 'home' || item.id === 'hobby')) {
-        return `<${item.label}>`
-    }
-    return item.label
+    return active ? `<${item.label}>` : item.label
 }
 
 function SiteNav({ activePage }: SiteNavProps) {

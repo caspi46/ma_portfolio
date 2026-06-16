@@ -6,11 +6,15 @@ function ProfileInfo() {
             <p className="info-label">Info</p>
             <div className="info-card">
                 <h3 className="info-subtitle">Education</h3>
-                <ul className="info-list">
-                    {EDUCATION.map((item) => (
-                        <li key={item}>{item}</li>
+                <div className="education-list">
+                    {EDUCATION.map((entry) => (
+                        <div key={entry.school} className="education-entry">
+                            <p className="education-degree">{entry.degree}</p>
+                            <p className="education-school">{entry.school}</p>
+                            <p className="education-period">{entry.period}</p>
+                        </div>
                     ))}
-                </ul>
+                </div>
 
                 <h3 className="info-subtitle">Contact</h3>
                 <ul className="info-list info-list--contact">
@@ -34,17 +38,11 @@ function ProfileInfo() {
 
                 <h3 className="info-subtitle">Skills</h3>
                 <ul className="info-list info-list--contact">
-                    {SKILLS.map((skill) => {
-                        const Icon = skill.icon
-                        return (
-                            <li key={skill.label} className="info-list-spacer" aria-hidden="true">
-                                <span className="skill-entry">
-                                    <Icon className="contact-icon" />
-                                    <span>{skill.label}</span>
-                                </span>
-                            </li>
-                        )
-                    })}
+                    {SKILLS.map((skill) => (
+                        <li key={skill} className="info-list-spacer" aria-hidden="true">
+                            <span>{skill}</span>
+                        </li>
+                    ))}
                 </ul>
 
                 <h3 className="info-subtitle">CS Interests</h3>
