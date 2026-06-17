@@ -18,7 +18,7 @@ export type Experience = {
 
 export const HOME_LEAD = 'Hi This is Kenny Kim!'
 
-export const NEWS_ITEMS = ['Deciding Graduate School for MSCS, hehehehe']
+export const NEWS_ITEMS = ['Decided to stay in UC Irvine for MS degree in CS']
 
 export const EXPERIENCE: Experience[] = [
     {
