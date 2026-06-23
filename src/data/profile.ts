@@ -29,7 +29,7 @@ export const EDUCATION: EducationEntry[] = [
 ]
 
 export const RESUME = {
-    href: '/resume.pdf',
+    href: `${import.meta.env.BASE_URL}resume.pdf`,
     label: 'Resume',
 } as const
 
