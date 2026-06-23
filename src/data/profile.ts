@@ -28,6 +28,11 @@ export const EDUCATION: EducationEntry[] = [
     },
 ]
 
+export const PROFILE = {
+    name: 'Kenny Kim',
+    imageSrc: `${import.meta.env.BASE_URL}profile.jpg`,
+} as const
+
 export const RESUME = {
     href: `${import.meta.env.BASE_URL}resume.pdf`,
     label: 'Resume',

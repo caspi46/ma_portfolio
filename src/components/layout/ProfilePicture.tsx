@@ -1,5 +1,13 @@
+import { PROFILE } from '../../data/profile'
+
 function ProfilePicture() {
-    return <div className="profile-picture" aria-hidden="true" />
+    return (
+        <img
+            className="profile-picture"
+            src={PROFILE.imageSrc}
+            alt={PROFILE.name}
+        />
+    )
 }
 
 export default ProfilePicture
